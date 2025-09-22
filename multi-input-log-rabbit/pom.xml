@@ -25,26 +25,26 @@
 		<dependencies>
 			<!-- (begin) managed dependencies -->
 			<dependency>
-              <groupId>org.springframework.cloud</groupId>
-              <artifactId>spring-cloud-stream-dependencies</artifactId>
-              <version>4.2.2</version>
-              <type>pom</type>
-              <scope>import</scope>
-            </dependency>
+			  <groupId>org.springframework.cloud</groupId>
+			  <artifactId>spring-cloud-stream-dependencies</artifactId>
+			  <version>4.2.2</version>
+			  <type>pom</type>
+			  <scope>import</scope>
+			</dependency>
 			<dependency>
-              <groupId>org.springframework.cloud</groupId>
-              <artifactId>spring-cloud-function-dependencies</artifactId>
-              <version>4.2.3</version>
-              <type>pom</type>
-              <scope>import</scope>
-            </dependency>
+			  <groupId>org.springframework.cloud</groupId>
+			  <artifactId>spring-cloud-function-dependencies</artifactId>
+			  <version>4.2.3</version>
+			  <type>pom</type>
+			  <scope>import</scope>
+			</dependency>
 			<dependency>
-              <groupId>org.springframework.cloud</groupId>
-              <artifactId>spring-cloud-dependencies</artifactId>
-              <version>2024.0.2</version>
-              <type>pom</type>
-              <scope>import</scope>
-            </dependency>
+			  <groupId>org.springframework.cloud</groupId>
+			  <artifactId>spring-cloud-dependencies</artifactId>
+			  <version>2024.0.2</version>
+			  <type>pom</type>
+			  <scope>import</scope>
+			</dependency>
 			<!-- (end) managed dependencies -->
 		</dependencies>
 	</dependencyManagement>
@@ -52,54 +52,69 @@
 	<dependencies>
 		<!-- (begin) additional dependencies -->
 		<dependency>
-          <groupId>org.springframework.cloud.fn</groupId>
-          <artifactId>log-consumer</artifactId>
-          <version>4.0.1</version>
-        </dependency>
+		  <groupId>org.springframework.cloud.fn</groupId>
+		  <artifactId>log-consumer</artifactId>
+		  <version>4.0.1</version>
+		</dependency>
 		<dependency>
-          <groupId>org.springframework.cloud.stream.app</groupId>
-          <artifactId>stream-applications-security-common</artifactId>
-          <version>4.0.1</version>
-        </dependency>
+		  <groupId>org.springframework.cloud.stream.app</groupId>
+		  <artifactId>stream-applications-security-common</artifactId>
+		  <version>4.0.1</version>
+		</dependency>
 		<dependency>
-          <groupId>org.springframework.cloud.stream.app</groupId>
-          <artifactId>stream-applications-micrometer-common</artifactId>
-          <version>4.0.1</version>
-        </dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>stream-applications-composite-function-support</artifactId>
+			<version>4.0.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.cloud.fn</groupId>
+					<artifactId>spel-function</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.cloud.fn</groupId>
+					<artifactId>task-launch-request-function</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
-          <groupId>io.micrometer</groupId>
-          <artifactId>micrometer-registry-prometheus</artifactId>
-        </dependency>
+		  <groupId>org.springframework.cloud.stream.app</groupId>
+		  <artifactId>stream-applications-micrometer-common</artifactId>
+		  <version>4.0.1</version>
+		</dependency>
 		<dependency>
-          <groupId>io.micrometer.prometheus</groupId>
-          <artifactId>prometheus-rsocket-spring</artifactId>
-          <version>1.5.3</version>
-        </dependency>
+		  <groupId>io.micrometer</groupId>
+		  <artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
 		<dependency>
-          <groupId>io.pivotal.cfenv</groupId>
-          <artifactId>java-cfenv-boot</artifactId>
-          <version>2.4.1</version>
-        </dependency>
+		  <groupId>io.micrometer.prometheus</groupId>
+		  <artifactId>prometheus-rsocket-spring</artifactId>
+		  <version>1.5.3</version>
+		</dependency>
 		<dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-configuration-processor</artifactId>
-        </dependency>
+		  <groupId>io.pivotal.cfenv</groupId>
+		  <artifactId>java-cfenv-boot</artifactId>
+		  <version>2.4.1</version>
+		</dependency>
 		<dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
 		<dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-logging</artifactId>
-        </dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 		<!-- (end) additional dependencies -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
